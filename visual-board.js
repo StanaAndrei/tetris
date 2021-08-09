@@ -1,7 +1,7 @@
 export default class VisualBoard {
     constructor(m, n, cellSize) {
         this.n = n;//lines
-        this.m = m;//rows
+        this.m = m;//cols
         this.cellSize = cellSize;
     }
     draw(p5context, gameBoard) {
