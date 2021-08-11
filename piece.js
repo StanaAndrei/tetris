@@ -66,7 +66,6 @@ export default class Piece {
                 aux[j][len - i - 1] = this.shape[i][j];
             }
         }
-        this.shape = aux;
         let posOf1s = getPosOf1sFromShape(this);
         for (let elem of posOf1s) {
             const { i, j } = elem;
@@ -74,6 +73,7 @@ export default class Piece {
                 return;
             }
         }
+        this.shape = aux;
         this.posOf1s = posOf1s;
     }
 }
