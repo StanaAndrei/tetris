@@ -77,6 +77,7 @@ new p5(p5context => {
         p5context.createCanvas(NRCOLS * CELLSIZE, NRROWS * CELLSIZE);
         visBoard = new VisualBoard(NRCOLS, NRROWS, CELLSIZE);
         piece = new Piece(0, NRCOLS / 2, getRandElemFrom(SHAPES));
+        piece.rotate(gameBoard);
         setInterval(() => canGoDown = piece.applyGravity(gameBoard), 1500);
     }
     p5context.draw = () => {
@@ -90,6 +91,7 @@ new p5(p5context => {
         if (!canGoDown) {
             blockPieces();
             piece = new Piece(0, NRCOLS / 2, getRandElemFrom(SHAPES));
+            piece.rotate(gameBoard);
             canGoDown = true;
         }
         removeLines();
